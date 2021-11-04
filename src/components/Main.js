@@ -1,14 +1,15 @@
 import React from 'react';
-import Restaurant from './Restaurant';
+import Restaurants from './Restaurants';
+import Menu from './Menu';
 import {useStates} from './StatesProvider';
 
 export default function Main() {
-    const {page, setPage} = useStates();
+    const {mainPage, isMainPageRestaurants, isMainPageMenu, setMainPageMenu} = useStates();
 
-    console.log(page)
     return (
         <main>
-            <Restaurant />
+            {(isMainPageRestaurants()) ? <Restaurants /> : null}
+            {(isMainPageMenu()) ? <Menu /> : null}
         </main>
     )
 }
