@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Restaurant() {
+export default function Restaurants() {
     return (
         <div>
-            
+           Restaurants 
         </div>
     )
 }

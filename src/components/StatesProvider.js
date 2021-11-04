@@ -6,12 +6,33 @@ export const useStates = () => useContext(StateContext);
 
 
 export default function StatesProvider({children}) {
-    const [page, setPage] = useState('restaurants');
+
+    const [mainPage, setMainPage] = useState('restaurants');
+    const [activeRestaurant, setActiveRestaurant] = useState();
+
+    const setMainPageRestaurants = () => {setMainPage('restaurants');}
+    const isMainPageRestaurants = () => {
+        if (mainPage == 'restaurants') return true;
+        else return false;
+    }
+
+    const setMainPageMenu = (restaurant) => {
+        setActiveRestaurant(restaurant);
+        setMainPage('menu');
+    }
+    const isMainPageMenu = () => {
+        if (mainPage == 'menu') return true;
+        else return false;
+    }
 
     return (
         <StateContext.Provider value={{
-            page,
-            setPage
+            mainPage,
+            activeRestaurant,
+            setMainPageRestaurants,
+            setMainPageMenu,
+            isMainPageRestaurants,
+            isMainPageMenu
         }}>
             {children}
         </StateContext.Provider>
