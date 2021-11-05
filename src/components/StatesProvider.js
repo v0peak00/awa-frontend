@@ -8,7 +8,6 @@ export const useStates = () => useContext(StateContext);
 export default function StatesProvider({children}) {
 
     const [mainPage, setMainPage] = useState('restaurants');
-    const [activeRestaurant, setActiveRestaurant] = useState();
 
     const setMainPageRestaurants = () => {setMainPage('restaurants');}
     const isMainPageRestaurants = () => {
@@ -16,10 +15,7 @@ export default function StatesProvider({children}) {
         else return false;
     }
 
-    const setMainPageMenu = (restaurant) => {
-        setActiveRestaurant(restaurant);
-        setMainPage('menu');
-    }
+    const setMainPageMenu = () => {setMainPage('menu');}
     const isMainPageMenu = () => {
         if (mainPage == 'menu') return true;
         else return false;
@@ -28,7 +24,6 @@ export default function StatesProvider({children}) {
     return (
         <StateContext.Provider value={{
             mainPage,
-            activeRestaurant,
             setMainPageRestaurants,
             setMainPageMenu,
             isMainPageRestaurants,
