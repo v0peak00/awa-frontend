@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    background-color:blanchedalmond;
+}
+
+.box {
+    color:black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.843);
+    border-width: 4px;
+    border-radius: 3%;
+}
+
+.title {
+   font-weight: 700;
+   font-size: 18px;
+   margin-left: 20px;
+}
+
+.title a {
+    color: black;
+    text-decoration: none;
+}
+
+.title a:hover {
+    text-decoration: underline;
+}
+
+.restInfo {
+    font-weight: 300;
+    font-size: 15;
+    margin-left: 20px;
+}
